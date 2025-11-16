@@ -82,22 +82,20 @@ class UpdateTemplate(graphene.Mutation):
 
 
 class DeleteTemplate(graphene.Mutation):
-    class Arguments:
-        id = graphene.Int(required=True)
-
     ok = graphene.Boolean()
 
-    def mutate(self, info, id):
+    class Arguments:
+        ids = graphene.List(graphene.Int, required=True)
+
+    def mutate(self, info, ids):
         user = info.context.user
-        if not user.is_authenticated:
+        if not user or not user.is_authenticated:
             raise GraphQLError("Authentication required.")
 
-        try:
-            template = Template.objects.get(id=id, user=user)
-        except Template.DoesNotExist:
-            raise GraphQLError("Template not found or not accessible.")
+        template = Template.objects.filter(id__in=ids, user=user)
 
         template.delete()
+
         return DeleteTemplate(ok=True)
 
 

@@ -67,18 +67,20 @@ class UpdateParticipant(graphene.Mutation):
 
 
 class DeleteParticipant(graphene.Mutation):
-    class Arguments:
-        id = graphene.Int(required=True)
-
     ok = graphene.Boolean()
 
-    def mutate(self, info, id):
+    class Arguments:
+        ids = graphene.List(graphene.Int, required=True)
+
+    def mutate(self, info, ids):
         user = info.context.user
         if user.is_anonymous:
             raise Exception("Authentication required!")
 
-        participant = Participant.objects.get(pk=id)
+        participant = Participant.objects.filter(id__in=ids)
+
         participant.delete()
+
         return DeleteParticipant(ok=True)
 
 

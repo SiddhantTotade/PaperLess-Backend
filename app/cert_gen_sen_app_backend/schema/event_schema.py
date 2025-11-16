@@ -122,19 +122,20 @@ class DeleteEvent(graphene.Mutation):
     ok = graphene.Boolean()
 
     class Arguments:
-        id = graphene.Int(required=True)
+        ids = graphene.List(graphene.Int, required=True)
 
-    def mutate(self, info, id):
+    def mutate(self, info, ids):
         user = info.context.user
         if not user or not user.is_authenticated:
             raise Exception("Authentication required")
 
-        try:
-            event_obj = Event.objects.get(id=id, user=user)
-        except Event.DoesNotExist:
-            raise Exception("Event not found")
+        events = Event.objects.filter(id__in=ids, user=user)
 
-        event_obj.delete()
+        if not events.exists():
+            raise Exception("No events found for the given IDs")
+
+        events.delete()
+
         return DeleteEvent(ok=True)
 
 
