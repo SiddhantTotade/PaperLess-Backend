@@ -36,7 +36,7 @@ class UserSendPasswordResetEmailSerializer(serializers.Serializer):
                         display: inline-block;
                         padding: 12px 20px;
                         margin-top: 15px;
-                        background-color: #4CAF50;
+                        background-color: #007cff;
                         color: white;
                         text-decoration: none;
                         font-weight: bold;
