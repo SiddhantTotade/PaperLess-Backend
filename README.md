@@ -4,17 +4,8 @@
 
 # About the project
 
-PaperLess is a web application that generates PDF certificates from HTML templates and delivers them directly to the email.
+PaperLess is a web application that generates PDF document from HTML templates.
  
-### Features of the project
-
-- Filter eligible participants.
-- Choose templates for the certificate of participation/merit.
-- Upload image of the participant receiving certificate.
-- Upload images of the event album.
-- Sends certificate to the individual participant.
-- Downloads all generated certificates.
-
 ### Technologies used
 
 ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue) &nbsp; ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green) &nbsp; ![Django](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white) &nbsp; ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) &nbsp; ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) &nbsp; ![Tanstack Query](https://img.shields.io/badge/TanStack-F6E05E?style=for-the-badge&logo=reactquery&logoColor=black
@@ -96,10 +87,10 @@ python manage.py migrate
 
 ## First - Running Django Server
 
-- Change directory to `app`
+- Change directory to `paperless`
 
 ```shell
-cd app
+cd paperless
 ```
 
 - Run the django serever
@@ -107,36 +98,6 @@ cd app
 ```shell
 python manage.py runserver
 ```
-
-## Second - Running React Server
-
-- Now, open another terminal and change directory to cert_gen_sen_app_frontend
-
-```shell
-cd cert_gen_sen_app_frontend
-```
-
-- Inside react directory, run command to install node modules
-
-```shell
-npm install
-```
-
-- After installing node modules, start the react server
-
-```shell
-npm start
-```
-
-- Also you need to configure tailwind css for this project. Follow this guide to configure
-
-```shell
-https://tailwindcss.com/docs/guides/create-react-app
-```
-
-## Important Notes
-
-- Try to generate `app password` of gmail while sending certificates.
 
 #### Leave a star if you like the project. :star:
 
