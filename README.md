@@ -85,7 +85,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-## First - Running Django Server
+## Running Django Server (Backend)
 
 - Change directory to `paperless`
 
@@ -98,6 +98,10 @@ cd paperless
 ```shell
 python manage.py runserver
 ```
+
+## Running React Server (Frontend)
+
+- Visit this repo [PaperLess-Frontend](https://github.com/SiddhantTotade/PaperLess-Frontend)
 
 #### Leave a star if you like the project. :star:
 
