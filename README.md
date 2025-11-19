@@ -107,8 +107,6 @@ python manage.py runserver
 
 <div align="center" gap="10px" display="flex">
 
-<img src="https://github.com/SiddhantTotade/certificate-generator-and-sender/blob/main/app_images/app_image_1.png" width="400px" />
-<img src="https://github.com/SiddhantTotade/certificate-generator-and-sender/blob/main/app_images/app_image_2.png" width="400px" />
 <img src="https://github.com/SiddhantTotade/certificate-generator-and-sender/blob/main/app_images/certificate_before.png" width="400px" />
 <img src="https://github.com/SiddhantTotade/certificate-generator-and-sender/blob/main/app_images/certificate_after.png" width="400px" />
 
